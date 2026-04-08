@@ -1,0 +1,5 @@
+USER       TTY      FROM    LOGIN@  IDLE WHAT
+jv         console  -      29Mar26 10days -
+jv         s000     -      Sat03   4days -
+   jv         s001     -      16:10       7 -zsh
+jv         s005     -      19:28       - w
