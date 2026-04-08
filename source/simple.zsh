@@ -1,7 +1,16 @@
 #!/usr/bin/env zsh
 
 
-alias columns="column -t -s $'\t'"
+# Possible Inputs & Outputs
+# ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+#   columns               ->   column -t -s $_dflt_sep
+#   columns -s '...'      ->   column -t -s '...'
+#   columns '...'         ->   column -t -s '...'
+# × columns -t            ->   column -t
+# × columns -t -s '...'   ->   column -t -s '...'
+#
+# × columns -c 100        ->   column -c 100
+# × columns -x            ->   column -x 
 
 
 columns::simple() {
