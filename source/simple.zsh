@@ -1,3 +1,8 @@
+#!/usr/bin/env zsh
+
+
+alias columns="column -t -s $'\t'"
+
 
 columns::simple() {
 
