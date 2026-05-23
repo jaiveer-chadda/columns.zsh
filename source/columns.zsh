@@ -39,7 +39,10 @@ function columns() {
 
     seg_count=$#line_arr
 
-    if (( seg_count == 0 )) continue
+    if (( seg_count == 0 )) {
+      for seg_no in {1..$total_segs}; eval "column_$seg_no+=( '' )"
+      continue
+    }
 
     # if this line has more segments than we've seen before, make a new column
     #  array and max len var for each new segment/column that's gonna be added
@@ -63,12 +66,7 @@ function columns() {
       # add the segment to its column array
       eval "column_$seg_no+=( '$line_arr[seg_no]' )"
     }
-
-    # echo -E - "${(j:•:)line_arr}"
   }
-
-  # typeset -pm 'column_[0-9]'
-  # typeset -pm 'col_[0-9]_width'
 
   local seg_name seg_width_nm
   local -a segment_arr
